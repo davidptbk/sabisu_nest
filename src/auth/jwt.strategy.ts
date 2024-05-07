@@ -14,6 +14,10 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
     });
   }
 
+  async validate(payload:any){
+    return {userId:payload.userId}
+  }
+
  /*  validate(payload: any)  {
 
     const decodedPayload = jwt.verify(token, jwtConstants.secret);

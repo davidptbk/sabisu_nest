@@ -37,7 +37,7 @@ private jwtService:JwtService
 
     if (!isPasswordValid) throw new HttpException('Incorrect password/contraseña incorrecta', 403)
     
-  const payload= {id: findUser._id, name: findUser.name} //Carga util
+  const payload= {id: findUser._id, name: findUser.name, role:findUser.role} //Carga util
    const token =  this.jwtService.sign(payload) //firma del JWT
     
       const data= {
